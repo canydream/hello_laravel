@@ -3,6 +3,7 @@
   <head>
     <title>@yield('title', 'Weibo App') - Laravel 入门教程</title>
     <!-- <link rel="stylesheet" href="/css/app.css"> -->
+    <!-- 静态文件的动态化 -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   </head>
   <body>
