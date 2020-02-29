@@ -145,5 +145,21 @@ class UsersController extends Controller
     }
 
 
+
+    public function followings(User $user)
+    {
+        $users = $user->followings()->paginate(30);
+        $title = $user->name . '关注的人';
+        return view('users.show_follow', compact('users', 'title'));
+    }
+
+    public function followers(User $user)
+    {
+        $users = $user->followers()->paginate(30);
+        $title = $user->name . '的粉丝';
+        return view('users.show_follow', compact('users', 'title'));
+    }
+
+
 }
 // 我们将用户对象 $user 通过 compact 方法转化为一个关联数组，并作为第二个参数传递给 view 方法，将数据与视图进行绑定。
